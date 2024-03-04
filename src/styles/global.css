@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .poly-clip {
+    clip-path: polygon(40% 0, 100% 0, 100% 100%, 0% 100%);
+  }
+}
+
+:root {
+  --header-height: 4.5rem;
+  --dvh: calc(100svh - var(--header-height));
+
+}

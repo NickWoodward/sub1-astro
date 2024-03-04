@@ -1,0 +1,61 @@
+---
+import "../styles/global.css";
+import { Image } from 'astro:assets';
+
+import MainLayout from "../layouts/main-layout.astro";
+import { Section } from "../components/Section";
+import { Hero } from "../components/Hero";
+import { About } from "../components/About";
+
+// Assets
+import servers from '../assets/servers-compressed-1920.webp';
+
+console.log("Running on the server")
+---
+		<!-- Overflow-hidden fixes 1st section pushing fixed header down -->
+		<MainLayout classes="overflow-hidden">
+			<Section headerOffset height="full" className="bg-sky-50 grid grid-cols-content-xxs xxs:grid-cols-content-xs xs:grid-cols-content-sm sm:grid-cols-content-md lg:grid-cols-content-lg xl:grid-cols-content-xl items-center">	
+				
+				<div class="IMAGE__BORDER hidden lg:flex -translate-x-3 bg-slate-200 row-start-1 col-start-1 lg:col-start-3 col-span-full h-full lg:poly-clip"></div>
+				<div class="IMAGE__BG bg-gray-600 row-start-1 col-start-1 lg:col-start-3 col-span-full h-full lg:poly-clip"></div>
+				<Image 
+					data-flip="false" 
+					class="IMAGE row-start-1 col-start-1 lg:col-start-3 col-span-full h-full object-cover mix-blend-soft-light brightness-[55%] z-40 lg:poly-clip" 
+					src={servers} 
+					widths={[ ]} 
+					alt="A closeup of our servers" slot="bgImage"
+				/>	
+				<Hero className="HERO row-start-1 col-start-2 col-span-1 z-40" />
+			</Section>
+
+			<Section className="bg-slate-200 grid grid-cols-content-xxs xxs:grid-cols-content-xs xs:grid-cols-content-sm sm:grid-cols-content-md lg:grid-cols-content-lg xl:grid-cols-content-xl items-center">
+				<About className="col-start-2 col-span-1">
+					<Image 
+						data-flip="false" 
+						class="IMAGE row-start-1 col-start-1 lg:col-start-3 col-span-full h-full object-cover mix-blend-soft-light brightness-[55%] z-40 lg:poly-clip" 
+						src={servers} 
+						widths={[ ]} 
+						alt="A closeup of our servers" slot="cardImage"
+					/>	
+					<Image 
+						data-flip="false" 
+						class="IMAGE row-start-1 col-start-1 lg:col-start-3 col-span-full h-full object-cover mix-blend-soft-light brightness-[55%] z-40 lg:poly-clip" 
+						src={servers} 
+						widths={[ ]} 
+						alt="A closeup of our servers" slot="cardImage"
+					/>					
+				</About>
+			</Section>
+			
+			<Section className="bg-slate-200 grid grid-cols-content-xxs xxs:grid-cols-content-xs xs:grid-cols-content-sm sm:grid-cols-content-md lg:grid-cols-content-lg xl:grid-cols-content-xl items-center">
+				<About className="col-start-2 col-span-1">
+					<Image 
+						data-flip="false" 
+						class="IMAGE row-start-1 col-start-1 lg:col-start-3 col-span-full h-full object-cover mix-blend-soft-light brightness-[55%] z-40 lg:poly-clip" 
+						src={servers} 
+						widths={[ ]} 
+						alt="A closeup of our servers" slot="cardImage"
+					/>					
+				</About>
+			</Section>
+		</MainLayout>
