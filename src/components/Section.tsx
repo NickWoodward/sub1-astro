@@ -49,7 +49,7 @@ export const sectionVariants = cva("w-full",
 );
 
 export function Section({className, bgImage, id, intent, height, headerOffset, breakout, yPad, children}:Props) {
-  const sectionClasses = cn("SECTION border border-red-500", className);
+  const sectionClasses = cn("SECTION", className);
 
   return (
     <div 

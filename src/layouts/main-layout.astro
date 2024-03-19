@@ -19,8 +19,9 @@ const { classes } = Astro.props;
   <!-- <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script> -->
   <title>Sub1</title>
 </head>
-<body class="h-screen">
+<body class="relative h-screen">
   <main class={classes}>
+
     <Header>
       <Logo />
       <Navigation client:load />

@@ -23,7 +23,7 @@ export const Logo = ({className, size = "md"}: Props) => {
   const classes = cn(" pl-3 text-white tracking-tighter uppercase", className);
 
   return (
-    <a href="#hero">
+    <a href="/#hero">
       <div className={logoVariants({ size, className: classes })}>Sub<span className={cn("text-primary",
         size==="sm" && "ml-2",
         size==="md" &&  "ml-2",

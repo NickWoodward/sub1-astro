@@ -28,10 +28,11 @@ export default {
         primary: 'hsl(178, 61%, 49%)',
         primaryDark: 'hsl(178, 61%, 28%)',
         primaryLight: 'hsl(178, 61%, 60%)',
-        primaryVLight: 'hsla(178, 61%, 72%, 1)',
+        primaryVLight: 'hsla(178, 61%, 95%, 1)',
         secondary: 'hsl(250, 96%, 13%)',
         tertiary: 'hsl(193, 26% 93%)',
         error:'firebrick',
+        input: "var(--input-text)"
 				
       },
       gridTemplateColumns: {

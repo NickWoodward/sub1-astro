@@ -1,10 +1,11 @@
-import type { ComponentProps, ReactNode } from "react";
+import type { ReactNode } from "react";
 import { cn } from "../utils/utils";
 import { SectionIntro } from "./SectionIntro";
 import { SectionSubtitle } from "./SectionSubtitle";
 import { SectionTitle } from "./SectionTitle";
 import { SectionDescription } from "./SectionDescription";
 import { Card } from "./Card";
+import { Map } from "./Map";
 
 interface Props {
   className?: string,
@@ -13,10 +14,10 @@ interface Props {
   recycleIcon?: ReactNode
 }
 
-export const About = ({className, solarIcon, settingsIcon, recycleIcon}: Props) => {
-  const title = "Single-Tenant Data Centres";
-  const subtitle = "Cost Efficient, Resilient & Secure";
-  const description = ["New or fully refurbished hyper-efficient data centres, with low cooling requirements, onsite power generation and direct utility procurement."];
+export const DataCenters = ({className, solarIcon, settingsIcon, recycleIcon}: Props) => {
+  const title = "Current Data Center Developments";
+  const subtitle = "Capacity Available for Lease or Purchase";
+  const description = ["SUB1 have multiple developments at various stages of completion. Brownfield projects provide capacity much quicker than traditional design and build data centres. Please contact us to find out more about future developments. Below are developments that have capacity or are close to completion:"];
 
   const cards = [
     {
@@ -31,22 +32,22 @@ export const About = ({className, solarIcon, settingsIcon, recycleIcon}: Props) 
       cardTitle: "No Compressors",
       cardDescription: "Compressorless cooling via evaporative free-air system, with active hot and cold-aisle containment"
     },
-    {
-      id: 3,
-      cardImage: recycleIcon,
-      cardTitle: "No Fossil Fuels",
-      cardDescription: "Resilient and sustainable back-up generator sets, 100% powered by HVO"
-    },
   ];
 
-  const classes = cn("ABOUT relative py-section-sm gap-16 grid auto-rows-min grid-cols-1 w-full scroll-mt-header mx-auto overflow-hidden", className);
+  const classes = cn("DATACENTERS relative py-section-sm gap-16 grid auto-rows-min grid-cols-1 w-full scroll-mt-header mx-auto overflow-hidden", className);
 
   return (
-    <div className={classes} id="about">
+    <div className={classes} id="datacenters">
+      <Map location="Harlow" />
       <SectionIntro className="">
         <SectionSubtitle subtitle={subtitle} />
         <SectionTitle className="text-primaryDark" title={title} />
-        <SectionDescription description={description} />
+        <SectionDescription className="space-y-2">
+          <p>
+          SUB1 have multiple developments at various stages of completion. Brownfield projects provide capacity much quicker than traditional design and build data centres. Please contact us to find out more about future developments.</p> 
+          <p>Below are developments that have capacity or are close to completion:
+          </p>
+        </SectionDescription>
       </SectionIntro>
       <div className="cards grid gap-16">
         {

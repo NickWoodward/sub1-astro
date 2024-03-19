@@ -11,5 +11,28 @@
 :root {
   --header-height: 4.5rem;
   --dvh: calc(100svh - var(--header-height));
+  --input-text: hsl(215, 14%, 34%);
+}
 
+.CONTACT-FORM #cf-turnstile {
+  width: 100% !important;
+}
+
+.CONTACT-FORM iframe
+{
+  width: 100% !important;
+  border: none !important;
+  border-radius: 5px !important;
+}
+
+/* Change the white to any color */
+input:-webkit-autofill,
+input:-webkit-autofill:hover, 
+input:-webkit-autofill:focus, 
+input:-webkit-autofill:active{
+    -webkit-box-shadow: 0 0 0 30px white inset !important;
+}
+
+input:-webkit-autofill{
+  -webkit-text-fill-color: var(--input-text) !important;
 }

@@ -9,23 +9,24 @@ export const Navigation = () => {
   const $isMenuOpen = useStore(isMenuOpen);
 
   const navItems = [
-    {name: "About", to: "#about"},
+    {name: "About", to: "/#about"},
     {name: "Why Us", to: "#why-us"},
     {name: "Contact", to: "#contact"},
-    {name: "Data Centres", to: "#"},
+    {name: "Data Centres", to: "/datacenters"},
 
   ];
 
-  const handleMenuClick = () => {
+  const toggleMenu = (event: React.MouseEvent) => {
+    event.stopPropagation();
     isMenuOpen.set(!$isMenuOpen);
   }
 
   const mobileItemClasses = "cursor-pointer";
   const desktopItemClasses = "cursor-pointer";
 
-  return <>
-    <MobileBurger onClick={handleMenuClick} />
-    {$isMenuOpen && <MobileMenu items={navItems} itemClassName={mobileItemClasses} />}
+  return <div className="">
+    <MobileBurger onClick={toggleMenu} />
+    {$isMenuOpen && <MobileMenu close={toggleMenu} items={navItems} itemClassName={mobileItemClasses} />}
     <DesktopMenu items={navItems} itemClassName={desktopItemClasses} />
-  </>
+  </div>
 }

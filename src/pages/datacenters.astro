@@ -1,0 +1,22 @@
+---
+import "../styles/global.css";
+import { Image } from 'astro:assets';
+
+import MainLayout from "../layouts/main-layout.astro";
+import { Section } from "../components/Section";
+import { Contact } from "../components/Contact";
+import { DataCenters } from "../components/DataCenters";
+
+
+console.log("Running on the server")
+---
+<!-- Overflow-hidden fixes 1st section pushing fixed header down -->
+<MainLayout classes="overflow-hidden">
+
+	<Section className="mt-headerHeight bg-white grid grid-cols-content-xxs xxs:grid-cols-content-xs xs:grid-cols-content-sm sm:grid-cols-content-md lg:grid-cols-content-lg xl:grid-cols-content-xl items-center">
+    <!-- <DataCenters className="col-start-2 col-span-1" client:load /> -->
+  </Section>
+  <Section className="bg-slate-200 grid grid-cols-content-xxs xxs:grid-cols-content-xs xs:grid-cols-content-sm sm:grid-cols-content-md lg:grid-cols-content-lg xl:grid-cols-content-xl items-center">
+		<Contact className="col-start-2 col-span-1" client:visible/>
+	</Section>
+</MainLayout>

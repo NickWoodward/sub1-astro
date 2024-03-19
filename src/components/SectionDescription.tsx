@@ -1,13 +1,23 @@
-import type { ComponentProps } from "react";
+import { Fragment } from "react";
 import { cn } from "../utils/utils";
 
-interface Props extends ComponentProps<"div"> {
-  description: string
+interface Props {
+  className?: string,
+  description?: string[],
+  children?: React.ReactNode
 }
 
-export const SectionDescription = ({description, className}: Props) => {
-  const classes = cn("description mt-5 max-w-prose text-lg text-gray-500", className);
+export const SectionDescription = ({description, className, children}: Props) => {
+  const classes = cn("description flex flex-col gap-y-3 mt-5 max-w-prose text-lg text-gray-500", className);
+
   return (
-    <p className={classes}>{description}</p>
+    <>
+      {
+        children? <div className={classes}>{children}</div> : description?.map((content, index) => {
+          return <p key={index} className={classes}>
+            {content}
+          </p>
+        })}
+    </>
   )
 }

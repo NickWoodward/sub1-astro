@@ -3,6 +3,7 @@ import { HeroTitle } from "./HeroTitle"
 import { HeroContent } from "./HeroContent"
 import { HeroCTA } from "./HeroCTA";
 import { cn } from "../utils/utils";
+import { Toaster, toast } from "sonner";
 interface Props extends ComponentProps<"div"> {}
 
 export const Hero = ({className}: Props) => {
@@ -13,7 +14,8 @@ export const Hero = ({className}: Props) => {
   const classes = cn("relative gap-8  grid auto-rows-min grid-cols-3 w-full  scroll-mt-header  lg:px-md mx-auto overflow-hidden", className);
 
   return (
-    <div className={classes}> 
+    <div id="hero" className={classes}> 
+      <Toaster richColors position="bottom-right" />
       <HeroTitle title={title} subtitle={subtitle} className="row-start-1 col-start-1 col-span-full xs:max-w-[450px] xl:max-w-[500px] 2xl:max-w-[750px]" />
       <HeroContent content={content} className="row-start-2 col-start-1 col-span-full max-w-[600px] lg:max-w-[550px] xl:max-w-[650px] 2xl:max-w-[780px]" />
       <HeroCTA className="row-start-3 col-start-1 col-span-full xs:max-w-[420px]" />
