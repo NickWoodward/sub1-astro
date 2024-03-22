@@ -8,8 +8,7 @@ interface Props {
   className?: string
 }
 export const FAQs = ({className}: Props) => {
-  const title = "Frequently Asked Questions";
-  const classes = cn("FAQs relative py-section-sm gap-16 grid auto-rows-min grid-cols-1 w-full scroll-mt-header mx-auto overflow-hidden", className);
+  const classes = cn("FAQs relative gap-16 grid auto-rows-min grid-cols-1 w-full scroll-mt-header mx-auto overflow-hidden", className);
 
   const items = [
     {
@@ -36,12 +35,7 @@ export const FAQs = ({className}: Props) => {
 
   return (
     <div className={classes}>
-      <SectionIntro className="">
-        <SectionTitle className="text-primaryDark" title={title} />
-        <SectionDescription className="gap-y-0">
-          <p>If you can't find what you're looking for, you can always <a href="#" className="font-medium text-primary hover:text-primaryLight">send us an email</a> with your enquiry.</p>
-        </SectionDescription>
-      </SectionIntro>
+      
 
       <div className=" grid grid-cols-1 gap-y-10 xs:mt-16 lg:grid-cols-2 md:gap-x-6 xl:gap-x-10">
         {

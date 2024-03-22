@@ -1,9 +1,9 @@
 import type { ComponentProps, ReactNode } from "react";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
+
 import { cn } from "../utils/utils";
-import { SectionIntro } from "./SectionIntro";
-import { SectionSubtitle } from "./SectionSubtitle";
-import { SectionTitle } from "./SectionTitle";
-import { SectionDescription } from "./SectionDescription";
+
 import { Card } from "./Card";
 
 interface Props {
@@ -14,9 +14,6 @@ interface Props {
 }
 
 export const About = ({className, solarIcon, settingsIcon, recycleIcon}: Props) => {
-  const title = "Single-Tenant Data Centres";
-  const subtitle = "Cost Efficient, Resilient & Secure";
-  const description = ["New or fully refurbished hyper-efficient data centres, with low cooling requirements, onsite power generation and direct utility procurement."];
 
   const cards = [
     {
@@ -39,16 +36,20 @@ export const About = ({className, solarIcon, settingsIcon, recycleIcon}: Props) 
     },
   ];
 
-  const classes = cn("ABOUT relative py-section-sm gap-16 grid auto-rows-min grid-cols-1 w-full scroll-mt-header mx-auto overflow-hidden", className);
+  useGSAP(() => {
+    gsap.to('#text', {
+      ease: "power1.inOut",
+      opacity:1,
+      y: 0
+    })
+  });
+
+  const classes = cn("ABOUT relative gap-y-16 flex  w-full scroll-mt-header", className);
 
   return (
     <div className={classes} id="about">
-      <SectionIntro className="">
-        <SectionSubtitle subtitle={subtitle} />
-        <SectionTitle className="text-primaryDark" title={title} />
-        <SectionDescription description={description} />
-      </SectionIntro>
-      <div className="cards grid gap-16">
+
+      <div className="cards grid gap-16 md:grid-cols-2 lg:grid-cols-3 lg:gap-6">
         {
           cards.map(card => {
             return <Card key={card.id} cardTitle={card.cardTitle} cardDescription={card.cardDescription} cardImage={card.cardImage} />

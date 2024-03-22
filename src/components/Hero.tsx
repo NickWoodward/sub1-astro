@@ -11,7 +11,7 @@ export const Hero = ({className}: Props) => {
   const subtitle = "Modern, Build-to-Suit";
   const content = "Our sites in London and the surrounding areas offer single tenants a hyper-efficient, and commercially favourable alternative to wholesale colocation";
 
-  const classes = cn("relative gap-8  grid auto-rows-min grid-cols-3 w-full  scroll-mt-header  lg:px-md mx-auto overflow-hidden", className);
+  const classes = cn("relative gap-8  grid auto-rows-min grid-cols-3 w-full  scroll-mt-header    overflow-hidden", className);
 
   return (
     <div id="hero" className={classes}> 
